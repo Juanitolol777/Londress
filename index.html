@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LONDON APP — Family Edition</title>
+
+<style>
+:root{
+  --bg:#0b0b0b;
+  --card:#141414;
+  --text:#f2f2f2;
+  --muted:#9a9a9a;
+  --accent:#e63946;
+}
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header{
+  padding:24px;
+  border-bottom:1px solid #222;
+}
+
+h1{margin:0;font-size:22px;}
+p{color:var(--muted);margin:6px 0 0}
+
+nav{
+  display:flex;
+  gap:10px;
+  padding:10px;
+  overflow-x:auto;
+  border-bottom:1px solid #222;
+}
+
+nav button{
+  background:#1a1a1a;
+  color:white;
+  border:0;
+  padding:10px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+section{
+  display:none;
+  padding:16px;
+}
+
+section.active{
+  display:block;
+}
+
+.card{
+  background:var(--card);
+  padding:14px;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+
+iframe{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+  border:0;
+}
+
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  font-size:12px;
+  border-radius:6px;
+  background:#222;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>LONDON FAMILY TRIP</h1>
+  <p>Base: New Oxford Street · 5 días optimizados</p>
+</header>
+
+<nav>
+  <button onclick="show('d1')">Día 1</button>
+  <button onclick="show('d2')">Día 2</button>
+  <button onclick="show('d3')">Día 3</button>
+  <button onclick="show('d4')">Día 4</button>
+  <button onclick="show('d5')">Día 5</button>
+  <button onclick="show('map')">Mapa</button>
+</nav>
+
+<!-- DÍA 1 -->
+<section id="d1" class="active">
+  <h2>Día 1 — Centro + Soho + West End</h2>
+
+  <div class="card">
+    <b>Covent Garden + Soho</b>
+    <p>Paseo suave de adaptación + ambiente callejero.</p>
+  </div>
+
+  <div class="card">
+    <b>Musical West End (OBLIGATORIO)</b>
+    <p>Recomendado: Lion King / Wicked</p>
+  </div>
+
+  <div class="card">
+    <b>Chinatown cena</b>
+  </div>
+</section>
+
+<!-- DÍA 2 -->
+<section id="d2">
+  <h2>Día 2 — Harry Potter + Norte Londres</h2>
+
+  <div class="card">
+    <b>Harry Potter Studio Tour</b>
+    <p>Salida media mañana. Duración: 5–6h total.</p>
+  </div>
+
+  <div class="card">
+    <b>Regreso + descanso Covent Garden</b>
+  </div>
+
+  <div class="card">
+    <b>Build-A-Bear Workshop</b>
+    <p>Actividad ideal para la niña (11 años)</p>
+  </div>
+</section>
+
+<!-- DÍA 3 -->
+<section id="d3">
+  <h2>Día 3 — Wembley + Norte</h2>
+
+  <div class="card">
+    <b>Wembley Stadium Tour</b>
+    <p>Tour guiado del estadio + vestuarios + campo</p>
+  </div>
+
+  <div class="card">
+    <b>Camden Market + Primrose Hill</b>
+  </div>
+</section>
+
+<!-- DÍA 4 -->
+<section id="d4">
+  <h2>Día 4 — Canary Wharf + Sky Garden</h2>
+
+  <div class="card">
+    <b>Canary Wharf</b>
+    <p>Zona moderna financiera + paseo arquitectura</p>
+  </div>
+
+  <div class="card">
+    <b>Sky Garden</b>
+    <p>Mejor mirador gratuito de Londres</p>
+  </div>
+</section>
+
+<!-- DÍA 5 -->
+<section id="d5">
+  <h2>Día 5 — Iconos + cierre</h2>
+
+  <div class="card">
+    <b>Westminster + Big Ben</b>
+  </div>
+
+  <div class="card">
+    <b>St. James Park</b>
+  </div>
+
+  <div class="card">
+    <b>Últimas compras Oxford Street</b>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="map">
+  <h2>Mapa general</h2>
+
+  <div class="card">
+    <b>Base: New Oxford Street</b>
+  </div>
+
+  <iframe src="https://www.google.com/maps?q=New+Oxford+Street+London&output=embed"></iframe>
+
+  <div class="card">
+    <b>Wembley</b>
+  </div>
+  <iframe src="https://www.google.com/maps?q=Wembley+Stadium&output=embed"></iframe>
+
+  <div class="card">
+    <b>Harry Potter Studios</b>
+  </div>
+  <iframe src="https://www.google.com/maps?q=Warner+Bros+Studio+Tour+London&output=embed"></iframe>
+
+  <div class="card">
+    <b>Canary Wharf</b>
+  </div>
+  <iframe src="https://www.google.com/maps?q=Canary+Wharf&output=embed"></iframe>
+
+  <div class="card">
+    <b>Sky Garden</b>
+  </div>
+  <iframe src="https://www.google.com/maps?q=Sky+Garden+London&output=embed"></iframe>
+</section>
+
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
